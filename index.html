@@ -101,7 +101,7 @@
             font-size: 28px;
             margin: 0 0 15px 0;
             display: flex;
-align-items: center;
+            align-items: center;
             justify-content: center;
             gap: 8px;
         }
@@ -117,23 +117,18 @@ align-items: center;
         /* Các Thẻ Giá Tiền (Pricing Cards) */
         .pricing-section { padding: 0 15px 20px; }
         
-        /* Gói 1: Màu Cam */
-        .card-orange {
-            background: linear-gradient(135deg, #ff8c6b 0%, #ff5757 100%);
+        .card-orange { background: linear-gradient(135deg, #ff8c6b 0%, #ff5757 100%); }
+        .card-green { background: linear-gradient(135deg, #42b883 0%, #35495e 100%); }
+        .card-blue { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .card-purple { background: linear-gradient(135deg, #c471ed 0%, #f64f59 100%); }
+        .card-gold { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); }
+
+        .pricing-card {
             border-radius: 16px;
             padding: 20px;
             color: white;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 20px rgba(255, 87, 87, 0.3);
-        }
-        /* Gói 2: Màu Xanh Lục */
-        .card-green {
-            background: linear-gradient(135deg, #42b883 0%, #35495e 100%);
-            border-radius: 16px;
-            padding: 20px;
-            color: white;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 20px rgba(66, 184, 131, 0.3);
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .card-title {
@@ -158,12 +153,11 @@ align-items: center;
             padding: 12px;
             margin-bottom: 10px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 12px;
         }
-        .feature i { font-size: 18px; }
-        .feature-text { font-size: 13px; }
-        .feature-text strong { display: block; font-size: 14px; margin-bottom: 2px; }
+        .feature i { font-size: 16px; min-width: 20px; text-align: center; margin-top: 2px; }
+        .feature-text { font-size: 13px; line-height: 1.4; }
 
         .buy-btn {
             display: block;
@@ -177,9 +171,8 @@ align-items: center;
             margin-top: 15px;
             cursor: pointer;
             text-align: center;
+            color: #333;
         }
-        .buy-btn-orange { color: #ff5757; }
-        .buy-btn-green { color: #42b883; }
 
         /* Nút Hỗ Trợ Nổi Góc Phải */
         .float-btn {
@@ -188,7 +181,7 @@ align-items: center;
             right: 20px;
             width: 55px;
             height: 55px;
-            background: #5c6bc0;
+            background: #0d6efd;
             color: white;
             border-radius: 50%;
             display: flex;
@@ -202,7 +195,8 @@ align-items: center;
     </style>
 </head>
 <body>
-<!-- Navbar -->
+
+    <!-- Navbar -->
     <div class="navbar">
         <button class="menu-btn" onclick="toggleSidebar()">☰</button>
         <a href="#" class="check-btn">🔍 Kiểm Tra Đơn Hàng</a>
@@ -224,79 +218,102 @@ align-items: center;
     <!-- Nội dung chính -->
     <div class="container">
         <div class="hero">
-            <h1>Chứng Chỉ Esign <span class="verified-badge">✔</span></h1>
-            <p>Lựa chọn gói dịch vụ phù hợp với nhu cầu của bạn.</p>
-            <p>Hướng dẫn mua tại nút Đăng Ký Ngay.</p>
-            <p>Ấn <b>Kiểm Tra Đơn Hàng</b> và xem Hướng Dẫn Cài Đặt..</p>
+            <h1>DŨNG-IOS CHỨNG CHỈ <span class="verified-badge">✔</span></h1>
+            <p>Hotline Zalo: 0963095545</p>
             <p>Hệ Thống hoàn toàn <b>TỰ ĐỘNG 100%</b>.</p>
         </div>
 
         <div class="pricing-section">
-            <!-- Gói 99K -->
-            <div class="card-orange">
-                <div class="card-title">🍎 IPHONE-CHỨNG CHỈ ESIGN LẤY NGAY UNBAN. KHÔNG BẢO HÀNH</div>
-                <div class="card-price">99.000đ <span>/ 1-Thiết Bị</span></div>
-                
-                <div class="feature">
-                    <i>⏱</i>
-                    <div class="feature-text">
-                        <strong>Thời Hạn Sử Dụng</strong>
-                        350 Ngày
-                    </div>
-                </div>
-                <div class="feature">
-                    <i>⚙️</i>
-                    <div class="feature-text">
-                        <strong>Thời Gian Cấp Chứng Chỉ</strong>
-                        0 Ngày
-                    </div>
-                </div>
-                <div class="feature">
-                    <i>🛡️</i>
-                    <div class="feature-text">
-                        <strong>Thời Gian Bảo Hành</strong>
-                        Không Bảo Hành
-                    </div>
-                </div>
-                
-                <a href="#" class="buy-btn buy-btn-orange">🛒 Đăng Ký Ngay</a>
-            </div>
             
-            <!-- Gói 139K -->
-            <div class="card-green">
-                <div class="card-title">🍎 IPHONE-CHỨNG CHỈ ESIGN LẤY NGAY UNBAN. BẢO HÀNH 60 NGÀY</div>
-                <div class="card-price">139.000đ <span>/ 1-Thiết Bị</span></div>
+            <!-- GÓI 1: 30 NGÀY -->
+            <div class="pricing-card card-orange">
+                <div class="card-title">UNBAND LẤY NGAY BH 30 NGÀY</div>
+                <div class="card-price">119,999đ <span>/ năm / thiết bị</span></div>
                 
-                <div class="feature">
-                    <i>⏱</i>
-                    <div class="feature-text">
-<strong>Thời Hạn Sử Dụng</strong>
-                        350 Ngày
-                    </div>
-                </div>
-                <div class="feature">
-                    <i>⚙️</i>
-                    <div class="feature-text">
-                        <strong>Thời Gian Cấp Chứng Chỉ</strong>
-                        0 Ngày
-                    </div>
-                </div>
-                <div class="feature">
-                    <i>🛡️</i>
-                    <div class="feature-text">
-                        <strong>Thời Gian Bảo Hành</strong>
-                        60 Ngày
-                    </div>
-                </div>
+                <div class="feature"><i>✅</i><div class="feature-text">CHỨNG CHỈ DÀNH CHO IPHONE / IPAD</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">HỖ TRỢ CÀI ĐẶT ESIGN, GBOX, SCARLET</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">LẤY NGAY - MỞ KHÓA TOÀN BỘ BAN/BLACKLIST</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">HỖ TRỢ MIỄN PHÍ BẢO HÀNH 30 NGÀY</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">BAO GỒM .p12 và .mobileprovision</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">PHIÊN BẢN MỌI ios THẤP -> CAO</div></div>
+                <div class="feature"><i>❌</i><div class="feature-text">MÁY BYPASS/iCLOUD ẨN KHÔNG HỖ TRỢ</div></div>
+                <div class="feature"><i>❌</i><div class="feature-text">KHÔNG DÙNG ĐƯỢC CHO THIẾT BỊ KHÁC</div></div>
                 
-                <a href="#" class="buy-btn buy-btn-green">🛒 Đăng Ký Ngay</a>
+                <a href="#" class="buy-btn" style="color: #ff5757;">🛒 Mua Ngay ➔</a>
+            </div>
+
+            <!-- GÓI 2: 90 NGÀY -->
+            <div class="pricing-card card-green">
+                <div class="card-title">UNBAND LẤY NGAY BH 90 NGÀY</div>
+                <div class="card-price">179,999đ <span>/ năm / thiết bị</span></div>
+                
+                <div class="feature"><i>✅</i><div class="feature-text">CHỨNG CHỈ DÀNH CHO IPHONE / IPAD</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">HỖ TRỢ CÀI ĐẶT ESIGN, GBOX, SCARLET</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">LẤY NGAY - MỞ KHÓA TOÀN BỘ BAN/BLACKLIST</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">HỖ TRỢ MIỄN PHÍ BẢO HÀNH 90 NGÀY</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">BAO GỒM .p12 và .mobileprovision</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">PHIÊN BẢN MỌI ios THẤP -> CAO</div></div>
+                <div class="feature"><i>❌</i><div class="feature-text">MÁY BYPASS/iCLOUD ẨN KHÔNG HỖ TRỢ</div></div>
+                <div class="feature"><i>❌</i><div class="feature-text">KHÔNG DÙNG ĐƯỢC CHO THIẾT BỊ KHÁC</div></div>
+                
+                <a href="#" class="buy-btn" style="color: #42b883;">🛒 Mua Ngay ➔</a>
+            </div>
+
+            <!-- GÓI 3: 200 NGÀY -->
+            <div class="pricing-card card-blue">
+                <div class="card-title">UNBAND LẤY NGAY BH 200 NGÀY</div>
+                <div class="card-price">229,999đ <span>/ năm / thiết bị</span></div>
+                
+                <div class="feature"><i>✅</i><div class="feature-text">CHỨNG CHỈ DÀNH CHO IPHONE / IPAD</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">HỖ TRỢ CÀI ĐẶT ESIGN, GBOX, SCARLET</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">LẤY NGAY - MỞ KHÓA TOÀN BỘ BAN/BLACKLIST</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">HỖ TRỢ MIỄN PHÍ BẢO HÀNH 200 NGÀY NẾU APPLE THU HỒI CẤP MỚI NGAY LẬP TỨC</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">BAO GỒM .p12 và .mobileprovision</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">PHIÊN BẢN MỌI ios THẤP -> CAO</div></div>
+                <div class="feature"><i>❌</i><div class="feature-text">MÁY BYPASS/iCLOUD ẨN KHÔNG HỖ TRỢ</div></div>
+                <div class="feature"><i>❌</i><div class="feature-text">KHÔNG DÙNG ĐƯỢC CHO THIẾT BỊ KHÁC</div></div>
+                
+                <a href="#" class="buy-btn" style="color: #4facfe;">🛒 Mua Ngay ➔</a>
+            </div>
+
+            <!-- GÓI 4: 365 NGÀY -->
+            <div class="pricing-card card-purple">
+                <div class="card-title">UNBAND LẤY NGAY BH 365 NGÀY</div>
+                <div class="card-price">299,999đ <span>/ năm / thiết bị</span></div>
+                
+                <div class="feature"><i>✅</i><div class="feature-text">CHỨNG CHỈ DÀNH CHO IPHONE / IPAD</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">HỖ TRỢ CÀI ĐẶT ESIGN, GBOX, SCARLET</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">LẤY NGAY - MỞ KHÓA TOÀN BỘ BAN/BLACKLIST</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">HỖ TRỢ MIỄN PHÍ BẢO HÀNH 365 NGÀY NẾU APPLE THU HỒI CẤP MỚI NGAY LẬP TỨC</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">BAO GỒM .p12 và .mobileprovision</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">PHIÊN BẢN MỌI ios THẤP -> CAO</div></div>
+                <div class="feature"><i>❌</i><div class="feature-text">MÁY BYPASS/iCLOUD ẨN KHÔNG HỖ TRỢ</div></div>
+                <div class="feature"><i>❌</i><div class="feature-text">KHÔNG DÙNG ĐƯỢC CHO THIẾT BỊ KHÁC</div></div>
+                
+                <a href="#" class="buy-btn" style="color: #c471ed;">🛒 Mua Ngay ➔</a>
+            </div>
+
+            <!-- GÓI 5: 666 NGÀY (VIP) -->
+            <div class="pricing-card card-gold">
+                <div class="card-title">UNBAND LẤY NGAY BH 666Đ</div>
+                <div class="card-price">599,999đ <span>/ năm / thiết bị</span></div>
+                
+                <div class="feature"><i>✅</i><div class="feature-text">Tương đương 2 năm sử dụng</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">Tặng kèm app UnlockIPA</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">Bảo hành 666 ngày lỗi 1 đổi 1 ngay lập tức</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">MỞ KHÓA TOÀN BỘ CÁC THIẾT BỊ BAN/BLACKLIST</div></div>
+                <div class="feature"><i>✅</i><div class="feature-text">Dành cho iPhone/iPad - phù hợp mọi phiên bản iOS</div></div>
+                <div class="feature"><i>❌</i><div class="feature-text">MÁY BYPASS/iCLOUD ẨN KHÔNG HỖ TRỢ</div></div>
+                <div class="feature"><i>❌</i><div class="feature-text">KHÔNG DÙNG ĐƯỢC CHO THIẾT BỊ KHÁC</div></div>
+                
+                <a href="#" class="buy-btn" style="color: #e6a83a;">🛒 Mua Ngay ➔</a>
             </div>
 
         </div>
     </div>
 
     <!-- Nút Float Chat -->
-    <div class="float-btn">🎧</div>
+    <div class="float-btn">💬</div>
 
     <!-- Script điều khiển Menu Trượt -->
     <script>
@@ -307,4 +324,10 @@ align-items: center;
                 sidebar.classList.remove('active');
                 overlay.style.display = 'none';
             } else {
-                sidebar.classList.add('
+                sidebar.classList.add('active');
+                overlay.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
